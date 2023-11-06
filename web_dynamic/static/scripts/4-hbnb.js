@@ -17,24 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   $.ajax({
-    url: "http://127.0.0.1:5001/api/v1/status/",
+    url: 'http://127.0.0.1:5001/api/v1/status/',
     success: (data) => {
-      if (data.status === 'OK')
-        $('#api_status').addClass("available");
+      if (data.status === 'OK') { $('#api_status').addClass('available'); }
     }
-  })
+  });
 
-  $("button").on("click", () => {
+  $('button').on('click', () => {
     $.ajax({
-      url: "http://127.0.0.1:5001/api/v1/places_search/",
-      type: "POST",
-      contentType: "application/json",
+      url: 'http://127.0.0.1:5001/api/v1/places_search/',
+      type: 'POST',
+      contentType: 'application/json',
       data: JSON.stringify({}),
-      success: function(places) {
-        let section = $(".places");
+      success: function (places) {
+        const section = $('.places');
         section.empty();
         places.forEach(place => {
-            const article = `<article>
+          const article = `<article>
             <div class="title_box">
              <h2>${place.name}</h2>
              <div class="price_by_night">${place.price_by_night}</div>
@@ -49,6 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
           section.append(article);
         });
       }
-    })
-  })
+    });
+  });
 });

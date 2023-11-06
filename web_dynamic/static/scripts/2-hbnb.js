@@ -16,11 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   $.ajax({
-    url: "http://127.0.0.1:5001/api/v1/status/",
+    url: 'http://127.0.0.1:5001/api/v1/status/',
     success: (data) => {
-      if (data.status === 'OK')
-        $('#api_status').addClass("available");
+      if (data.status === 'OK') { $('#api_status').addClass('available'); }
     }
-  })
+  });
 });
-
