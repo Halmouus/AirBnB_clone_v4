@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
       overflow: 'hidden',
       'text-overflow': 'ellipsis',
       height: '1.5em',
-      'line-height': '1.5em'
+      'line-height': '1.5em',
+      'padding-bottom': '0'
     });
   });
 
@@ -51,4 +52,3 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 });
-
