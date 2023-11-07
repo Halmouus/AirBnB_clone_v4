@@ -38,13 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   
-  let chosenFilters = listamenities + listlocations;
+
   $('button').on('click', () => {
+    let chosenFilters = {"amenities": listamenities};
     $.ajax({
       url: 'http://127.0.0.1:5001/api/v1/places_search/',
       type: 'POST',
       contentType: 'application/json',
-      data: JSON.stringify({chosenFilters}),
+      data: JSON.stringify(Object.keys(chosenFilters)),
       success: function (places) {
         const section = $('.places');
         section.empty();
